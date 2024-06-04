@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY requirements.txt x.py /app
 
-RUN set -xe && \
+RUN set -x && \
     curl -o Miniconda3-py39_24.4.0-0-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-py39_24.4.0-0-Linux-x86_64.sh && \
     bash Miniconda3-py39_24.4.0-0-Linux-x86_64.sh -b -u -p ./Miniconda3-py39_24.4.0-0-Linux-x86_64 && \
     Miniconda3-py39_24.4.0-0-Linux-x86_64/bin/conda install -c conda-forge pynini=2.1.5 && \
@@ -15,6 +15,5 @@ RUN set -xe && \
     unzip main.zip && \
     cd ChatTTS-main && \
     pip install -r requirements.txt && \
-    cd .. && \
     python ../x.py && \
     python webui.py && \
