@@ -10,4 +10,4 @@ texts = ["在这里输入你的文本",]
 
 wavs = chat.infer(texts, use_decoder=True)
 
-torchaudio.save("output1.wav", torch.from_numpy(wavs[0]), 24000)
+torchaudio.save("output1.wav", torch.from_numpy(wavs[0]), 24000, format='wav')
