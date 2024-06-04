@@ -20,5 +20,4 @@ RUN set -x && \
     cd ChatTTS-main && \
     pip install -r requirements.txt && \
     mv ../simple.py . && \
-    python simple.py && \
-    python webui.py
+    python simple.py
