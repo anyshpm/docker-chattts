@@ -8,7 +8,8 @@ COPY requirements.txt simple.py /app
 
 RUN set -x && \
     apt update && \
-    apt install -y ffmpeg
+    apt install -y ffmpeg && \
+    apt clean
 
 RUN set -x && \
     curl -o Miniconda3-py39_24.4.0-0-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-py39_24.4.0-0-Linux-x86_64.sh && \
@@ -19,5 +20,6 @@ RUN set -x && \
     unzip main.zip && \
     cd ChatTTS-main && \
     pip install -r requirements.txt && \
+    pip cache remove && \
     mv ../simple.py . && \
     python simple.py
