@@ -23,3 +23,5 @@ RUN set -x && \
     pip cache remove && \
     mv ../simple.py . && \
     python simple.py
+
+CMD python webui.py
