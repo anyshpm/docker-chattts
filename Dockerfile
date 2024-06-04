@@ -20,7 +20,7 @@ RUN set -x && \
     unzip main.zip && \
     cd ChatTTS-main && \
     pip install -r requirements.txt && \
-    pip cache remove && \
+    pip cache purge && \
     mv ../simple.py . && \
     python simple.py
 
