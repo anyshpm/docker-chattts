@@ -16,4 +16,4 @@ RUN set -x && \
     cd ChatTTS-main && \
     pip install -r requirements.txt && \
     python ../x.py && \
-    python webui.py && \
+    python webui.py
