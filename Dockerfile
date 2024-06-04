@@ -15,6 +15,6 @@ RUN set -x && \
     unzip main.zip && \
     cd ChatTTS-main && \
     pip install -r requirements.txt && \
-    mv ../x.py . && \
-    python x.py && \
+    mv ../simple.py . && \
+    python simple.py && \
     python webui.py
