@@ -4,7 +4,7 @@ MAINTAINER Anyshpm Chen<anyshpm@anyshpm.com>
 
 WORKDIR /app
 
-COPY requirements.txt x.py /app
+COPY requirements.txt simple.py /app
 
 RUN set -x && \
     curl -o Miniconda3-py39_24.4.0-0-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-py39_24.4.0-0-Linux-x86_64.sh && \
