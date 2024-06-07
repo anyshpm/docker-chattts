@@ -24,4 +24,6 @@ RUN set -x && \
     mv ../simple.py . && \
     python simple.py
 
+WORKDIR /app/ChatTTS-main
+
 CMD python webui.py
