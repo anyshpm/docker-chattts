@@ -17,9 +17,9 @@ RUN set -x && \
     rm -f Miniconda3-py39_24.4.0-0-Linux-x86_64.sh && \
     Miniconda3-py39_24.4.0-0-Linux-x86_64/bin/conda install -y -c conda-forge pynini=2.1.5 && \
     pip install -r requirements.txt && \
-    curl -Lo main.zip https://github.com/2noise/ChatTTS/archive/refs/heads/main.zip && \
+    curl -Lo main.zip https://github.com/2noise/ChatTTS/archive/refs/tags/v0.1.1.zip && \
     unzip main.zip && \
-    cd ChatTTS-main && \
+    cd ChatTTS && \
     pip install -r requirements.txt && \
     pip cache purge && \
     mv ../simple.py . && \
