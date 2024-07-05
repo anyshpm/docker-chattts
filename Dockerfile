@@ -2,6 +2,10 @@ FROM python:3.9-bullseye
 
 MAINTAINER Anyshpm Chen<anyshpm@anyshpm.com>
 
+ARG CHATTTS_VERSION
+
+ENV CHATTTS_VERSION=${CHATTTS_VERSION:-0.1.1}
+
 WORKDIR /app
 
 COPY requirements.txt simple.py /app
@@ -17,9 +21,9 @@ RUN set -x && \
     rm -f Miniconda3-py39_24.4.0-0-Linux-x86_64.sh && \
     Miniconda3-py39_24.4.0-0-Linux-x86_64/bin/conda install -y -c conda-forge pynini=2.1.5 && \
     pip install -r requirements.txt && \
-    curl -Lo main.zip https://github.com/2noise/ChatTTS/archive/refs/tags/v0.1.1.zip && \
-    unzip main.zip && \
-    cd ChatTTS && \
+    curl -Lo ChatTTS-${CHATTTS_VERSION}.zip https://github.com/2noise/ChatTTS/archive/refs/tags/v${CHATTTS_VERSION}.zip && \
+    unzip ChatTTS-${CHATTTS_VERSION}.zip && \
+    cd ChatTTS-${CHATTTS_VERSION} && \
     pip install -r requirements.txt && \
     pip cache purge && \
     mv ../simple.py . && \
