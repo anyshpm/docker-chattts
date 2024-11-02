@@ -26,9 +26,9 @@ RUN set -x && \
     cd ChatTTS-${CHATTTS_VERSION} && \
     pip install -r requirements.txt && \
     pip cache purge && \
-    mv ../simple.py . && \
-    python simple.py
+    python examples/cmd/run.py "This is test text." && \
+    rm ./output_audio_*.mp3
 
-WORKDIR /app/ChatTTS-main
+WORKDIR ChatTTS-${CHATTTS_VERSION}
 
-CMD python webui.py
+CMD python examples/web/webui.py
