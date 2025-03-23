@@ -6,7 +6,7 @@ LABEL maintainer="Anyshpm Chen <anyshpm@anyshpm.com>"
 
 ARG CHATTTS_VERSION
 
-ENV CHATTTS_VERSION=${CHATTTS_VERSION:-0.2.2}
+ENV CHATTTS_VERSION=${CHATTTS_VERSION:-0.2.3}
 
 WORKDIR /app
 
